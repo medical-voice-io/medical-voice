@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package voice;
+option go_package="medical_voice.pb";
+
+service VoiceService {
+    rpc transferVoiceData(stream VoiceData) returns (VoiceResponse) {}
+}
+
+message VoiceData {
+    bytes data = 1;
+}
+
+message VoiceResponse {
+    string name = 1;
+}
